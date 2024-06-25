@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: black;
+            color: wheat;
+        }
+        div {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 10px;
+        }
+        button {
+            padding: 4px;
+            background-color: rgb(77, 45, 181);
+            outline: none;
+            border-radius: 10px;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: blueviolet;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <div id="output">
+        <h1>It's for You</h1>
+        <button onclick="printHappyBirthday()">Please click here</button>
+    </div>
+    
+    <audio id="happyBirthdaySong">
+        <source src="./happy_birthday.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function printHappyBirthday() {
+            const outputDiv = document.getElementById("output");
+            const p = document.createElement("p");
+            p.textContent = "Happy Birthday Bishal Bro!";
+            outputDiv.appendChild(p);
+
+            const audio = document.getElementById("happyBirthdaySong");
+            audio.play();
+        }
+    </script>
+</body>
+</html>
